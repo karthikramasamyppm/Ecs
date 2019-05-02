@@ -1,0 +1,82 @@
+<section class="hero">
+    <div class="hero-body has-text-centered">
+      <form [formGroup]="uploadForm">
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Brand</label>
+              <div class="control">
+                <input class="input" type="text"  placeholder="apple" formControlName="brandname" >
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Brand Image</label>
+              <div class="control">
+              <input type="file" name="file" id="fileToUpload" formControlName="file1" (change)="fileEvent($event)">
+               </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Brandcategory</label>
+              <div class="control">
+                  <!--<select formControlName="category">
+                      <option *ngFor="let categories of categories" value= {{categories.id}}>
+                        {{categories.name}}
+                      </option>
+                    </select>-->
+                   <!-- <select formControlName="category" >
+                        <option *ngFor="let categories of categories" value= {{categories.id}}>
+                          {{categories.name}}
+                        </option>
+                      </select>-->
+                      <select (change)="onChangeEvent($event)" formControlName="category"  name="selectedObject" class="form-control">
+                          <option disabled>--Select--</option>
+                          <option *ngFor="let category of categories" value={{category._id}}>{{category.name}}</option>
+                          <!--<option *ngFor="let categories of categories" [value]="categories.name">{{categories.name}}</option>-->
+                      </select>
+                   
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <!--<label class="label is-pulled-left">Password:</label>
+              <div class="control">
+                <input class="input" type="password" formControlName="password" name="password">
+              </div>-->
+  
+              <br>
+              <br>
+              <a class="button is-primary is-medium is-fullwidth" (click)='addBrand()'>Add</a>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+  

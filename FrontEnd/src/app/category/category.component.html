@@ -1,0 +1,73 @@
+<section class="hero">
+    <div class="hero-body has-text-centered">
+      <form [formGroup]="uploadForm">
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Category</label>
+              <div class="control">
+                <input class="input" type="text"  placeholder="phone" formControlName="catetoryname" >
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Category Image</label>
+              <div class="control">
+                <!--<input class="input" type="text" placeholder="phone" formControlName="catetoryname" name="catetoryname">-->
+                <!--<input type="file" (change)="fileChange($event)" name="file" />-->
+               <!-- <input name="file" id="file" type="file" (change)="onFileChange($event)">-->
+               <input type="file" name="file" id="fileToUpload" formControlName="file1" (change)="fileEvent($event)">
+                <!--<input type="hidden" name="fileHidden" formControlName="file"/>
+                <p *ngIf="file" >{{file.name}}</p>-->
+
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <label class="label is-pulled-left">Categorystatus</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="status" formControlName="catetorystatus" >
+              </div>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+        <div class="columns">
+          <div class="column"></div>
+  
+          <div class="column is-3">
+            <div class="field">
+              <!--<label class="label is-pulled-left">Password:</label>
+              <div class="control">
+                <input class="input" type="password" formControlName="password" name="password">
+              </div>-->
+  
+              <br>
+              <br>
+              <a class="button is-primary is-medium is-fullwidth" (click)='addCategory()'>Add</a>
+            </div>
+          </div>
+  
+          <div class="column"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+  
